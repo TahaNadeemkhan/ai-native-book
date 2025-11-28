@@ -75,6 +75,22 @@
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
 
+## Constitutional Alignment *(mandatory review)*
+
+<!--
+  IMPORTANT: Before finalizing this spec, ensure all relevant project constitution
+  mandates are addressed in the functional requirements and user scenarios.
+-->
+
+- [ ] **Prime Directives**: Spec is consistent with `constitution.md` and `spec.md` as single sources of truth, adheres to SDD, and considers agentic workflows.
+- [ ] **Technology Mandates**: All technology choices (Frontend, Backend, Auth, Database, Vector) align with the constitution's specified stack and versions.
+- [ ] **Functional Requirements (Bonus Constraints)**:
+  - [ ] If applicable, hardware info capture during onboarding (Auth & Profile) is specified.
+  - [ ] If applicable, Urdu Translation via AI Skill (Localization) is specified.
+  - [ ] If applicable, RAG with context-aware selection (Chatbot) is specified.
+- [ ] **Engineering Standards**: Code quality (TypeScript, Pydantic), history/governance (PHR, ADR, folder hierarchy) are considered in the requirements.
+- [ ] **Failure Prevention**: Dependency lock and secrets management (using `.env`) are respected in the design.
+
 ## Requirements *(mandatory)*
 
 <!--

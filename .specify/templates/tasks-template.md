@@ -25,7 +25,23 @@ description: "Task list template for feature implementation"
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
 - Paths shown below assume single project - adjust based on plan.md structure
 
-<!-- 
+## Constitutional Alignment *(mandatory review)*
+
+<!--
+  IMPORTANT: Before finalizing tasks, ensure all relevant project constitution
+  mandates are implicitly addressed in the task breakdown.
+-->
+
+- [ ] **Prime Directives**: Task breakdown reflects SDD, aims for single sources of truth, and considers agentic workflows.
+- [ ] **Technology Mandates**: Tasks utilize and adhere to the specified technology stack (Docusaurus v3, React, TypeScript, Tailwind CSS v3, `better-auth`, FastAPI, Python 3.11+, `python-jose`, Neon Postgres, Qdrant Cloud).
+- [ ] **Functional Requirements (Bonus Constraints)**:
+  - [ ] Tasks include capturing Hardware Info (GPU/RAM) during onboarding if relevant to the feature.
+  - [ ] Tasks include Urdu Translation via AI Skill if relevant to the feature.
+  - [ ] Tasks incorporate RAG with context-aware selection for chatbot features.
+- [ ] **Engineering Standards**: Tasks promote strict code quality (TypeScript, Pydantic) and uphold history/governance standards (PHR, ADR, folder hierarchy).
+- [ ] **Failure Prevention**: Tasks prevent major dependency upgrades without ADRs and enforce `.env` for secrets.
+
+<!--
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
   
