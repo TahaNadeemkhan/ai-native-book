@@ -1,55 +1,58 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 0.0.0 -> 1.0.0
+Modified principles: None (initial creation)
+Added sections: Prime Directives, Technology Mandates, Functional Requirements, Engineering Standards, Failure Prevention
+Removed sections: None
+Templates requiring updates:
+- .specify/templates/plan-template.md: ⚠ pending
+- .specify/templates/spec-template.md: ⚠ pending
+- .specify/templates/tasks-template.md: ⚠ pending
+- .specify/templates/commands/*.md: ⚠ pending
+- README.md: ⚠ pending
+- docs/quickstart.md: ⚠ pending
+Follow-up TODOs: None
+-->
+# ai-native-book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### 1. Prime Directives (The "Why" & "How")
+*   **Single Source of Truth**: The `spec.md` is the absolute authority for features. The `constitution.md` is the absolute authority for engineering standards.
+*   **Spec-Driven Development (SDD)**: No implementation begins without a defined Spec and Plan.
+*   **Agentic Workflow**: All repetitive logic must be harvested into **Agent Skills** (`.claude/skills/`).
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### 2. Technology Mandates (The Stack)
+*   **Frontend**: Docusaurus v3 + React + TypeScript.
+    *   **Styling**: Tailwind CSS **v3** ONLY (Do not use v4).
+    *   **Auth**: `better-auth` Client SDK.
+*   **Backend**: FastAPI + Python 3.11+.
+    *   **Verification**: `python-jose` for JWT validation.
+    *   **Database**: Neon Postgres (SQLModel) with Multi-tenancy (`tenant_id`).
+    *   **Vector**: Qdrant Cloud.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### 3. Functional Requirements (Bonus Constraints)
+*   **Auth & Profile**: Must capture **Hardware Info** (GPU/RAM) during onboarding.
+*   **Localization**: Must include **Urdu Translation** (via AI Skill) as a core lesson tab.
+*   **Chatbot**: Must implement RAG with context-aware selection.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### 4. Engineering Standards
+*   **Code Quality**: Strict TypeScript for frontend. Pydantic models for backend.
+*   **History & Governance**:
+    *   Maintain strict folder hierarchy: `history/prompts/`, `history/adr/`, `history/audits/`.
+    *   Create a **PHR** after every significant task.
+    *   Document architectural decisions in **ADRs**.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-### [PRINCIPLE_6_NAME]
-
-
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### 5. Failure Prevention
+*   **Dependency Lock**: Do not upgrade major versions (e.g., Tailwind v4) without an ADR.
+*   **Secrets**: Never hardcode API keys; use `.env`.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other project practices and documentation. Amendments to this document require:
+1.  A formal proposal outlining the change and its rationale.
+2.  Review and approval by the Principal Software Architect.
+3.  Documentation in an Architectural Decision Record (ADR) if the amendment introduces a significant architectural decision.
+4.  A migration plan for existing systems if the amendment is backward incompatible.
+All code reviews and project activities must verify compliance with the principles outlined herein.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-11-28 | **Last Amended**: 2025-11-28
