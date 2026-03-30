@@ -31,7 +31,24 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Prime Directives Adherence**:
+  - [ ] `spec.md` is the single source of truth for features.
+  - [ ] `constitution.md` is the single source of truth for engineering standards.
+  - [ ] Implementation initiated only after a defined `spec.md` and `plan.md`.
+  - [ ] Repetitive logic extracted into Agent Skills (`.claude/skills/`).
+- [ ] **Technology Stack Compliance**:
+  - [ ] Frontend: Docusaurus v3, React, TypeScript, Tailwind CSS v3 (no v4), `better-auth` Client SDK.
+  - [ ] Backend: FastAPI, Python 3.11+, `python-jose` for JWT, Neon Postgres (SQLModel) with `tenant_id`, Qdrant Cloud.
+- [ ] **Functional Requirements Alignment**:
+  - [ ] Auth & Profile: Hardware Info (GPU/RAM) captured during onboarding.
+  - [ ] Localization: Urdu Translation via AI Skill as a core lesson tab.
+  - [ ] Chatbot: RAG implemented with context-aware selection.
+- [ ] **Engineering Standards Compliance**:
+  - [ ] Code Quality: Strict TypeScript (frontend), Pydantic models (backend).
+  - [ ] History & Governance: Strict folder hierarchy (`history/prompts/`, `history/adr/`, `history/audits/`). PHR created after every significant task. ADRs for architectural decisions.
+- [ ] **Failure Prevention Measures**:
+  - [ ] Dependency Lock: No major version upgrades (e.g., Tailwind v4) without an ADR.
+  - [ ] Secrets: No hardcoded API keys; `.env` usage enforced.
 
 ## Project Structure
 
